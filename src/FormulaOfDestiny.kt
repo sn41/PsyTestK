@@ -10,7 +10,7 @@
         "Я быстро подмечаю слабые стороны человека, идеи, и т.п."
     )
 
-    private val letters = arrayOf<String>(
+    private val psyTypes = arrayOf<String>(
         "Д", "Л", "Э", "Б", "П", "Н", "М", "С"
     )
 
@@ -26,7 +26,9 @@
         val numAsString = readlnOrNull()
 
         //преобразовать строку в число
-        val num: Int? = numAsString?.toIntOrNull();
+        val numOrNull: Int? = numAsString?.toIntOrNull();
+
+        val num = numOrNull?:0
 
         //выйти из функции и вернуть число
         return num
@@ -47,7 +49,7 @@
             val indexOfMax = getIndexOfMax()
 
             //поместить его на соответствующее место формулы
-            formulaOfDestiny[count] = letters[indexOfMax]
+            formulaOfDestiny[count] = psyTypes[indexOfMax]
 
             //обнулить найденный ответ с максимальным значением,
             //чтобы он не оказал влияния на поиск следующего значения.
